@@ -1,1 +1,595 @@
-<!-- Тут будуть описані всі стилі -->
+body {
+  font-family: 'Inter', sans-serif;
+  background: #ffffff;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #EBFFC2;
+  padding: 10px 100px;
+  width: 100%;
+}
+
+.logo {
+  width: 140px;
+  height: 140px;
+  background-image: url('https://i.postimg.cc/FKHtq7K2/TF-2.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  flex-shrink: 0;
+}
+
+.logo-block {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+.logo-text h1 {
+  margin: 0;
+  transform: translateY(5px);
+  font-size: 68px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  color: black;
+}
+
+.logo-text h4 {
+  margin: 0;
+  color: #6C8F27;
+  margin-top: 4px;
+  font-size: 23px;
+  transform: translateX(14px);
+  font-family: 'Krona One', sans-serif;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 40px;
+  justify-content: space-between;
+  flex-shrink: 0;
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  font-size: 28px;
+}
+
+.search-form input {
+  padding: 20px 120px 20px 20px; 
+  border: 1px solid #fff;
+  border-radius: 50px;
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  transform: translateX(50px);
+  font-weight: 600;
+}
+
+.site-header a {
+  color: black;
+  text-decoration: underline; 
+}
+
+.site-header a:focus,
+.site-header a:active,
+.site-header a:hover {
+  outline: none;
+  color: #6C8F27;
+  text-decoration: underline;
+}
+
+.site-header a:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+.tasks-today {
+  background: white;
+  border: 2px solid #B5FF00;
+  border-radius: 20px;
+  padding: 20px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.tasks-today h2 {
+  font-size: 32px;
+  font-weight: 900;
+  font-family: 'Inter', sans-serif !important;
+  padding-left: 30px;
+  position: relative;
+}
+
+.tasks-today h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 5px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  
+}
+
+
+.tasks-today:first-of-type h2::after {
+  content: "Налаштування дати та часу";
+  position: absolute;
+  left: 100%;
+  white-space: nowrap;
+  font-size: 19px;
+  color: gray;
+  margin-left: 20px;
+  top: 4px;
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+  justify-content: center;
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+  padding: 5px 10px;
+  border-radius: 8px;
+  position: relative;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+
+
+.page {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 30px;
+  
+}
+
+.task-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.task-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.task-header img {
+  width: 50px;
+  height: 50px;
+  transform: translateY(-2px);
+}
+
+.settings-btn {
+  position: absolute;
+  top: 30px;
+  left: 50px;
+  color: #6c6c6c;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1;
+  width: 150px;
+}
+
+.task-box {
+  border-radius: 35px;
+  width: 771px;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  border: 5px solid #C0FF42;
+  height: auto;
+  padding-bottom: 100px;
+}
+
+.task input[type="checkbox"] {
+  appearance: none;
+  width: 38px;
+  height: 38px;
+  border: 5px solid #C0FF42;
+  border-radius: 10px;
+  position: relative;
+  cursor: pointer;
+}
+
+.task input[type="checkbox"]:checked::before {
+  content: "✕";
+  color: black;
+  font-size: 38px;
+  position: absolute;
+  top: -15px;
+  left: 0px;
+  font-family: 'Arial', sans-serif;
+  font-weight: 900;
+}
+
+.task input[type="checkbox"]:checked + span {
+  color: gray;
+  text-decoration: line-through;
+  font-size: 24px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+}
+
+.task-Done {
+  font-size: 32px;
+  font-weight: 900;
+  font-family: 'Inter', sans-serif;
+  padding-left: 30px;
+  position: relative;
+}
+
+.task-Done h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 5px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;  
+}
+
+.task-Done:first-of-type h2::after {
+  content: "Налаштування дати та часу";
+  position: absolute;
+  left: 100%;
+  white-space: nowrap;
+  font-size: 19px;
+  color: gray;
+  margin-left: 20px;
+  top: 4px;
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+  justify-content: center;
+}
+
+.page {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.task-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.task-header {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 6px;
+  margin-left: 550px;
+}
+
+.task-header img {
+  width: 50px;
+  height: 50px;
+  transform: translateY(-2px);
+}
+
+.settings-btn {
+  position: absolute;
+  top: 30px;
+  left: 50px;
+  color: #6c6c6c;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1;
+  width: 150px;
+}
+
+.task-box {
+  border-radius: 35px;
+  width: 1612px;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  border: 5px solid #C0FF42;
+  height: auto;
+  padding-bottom: 100px;
+}
+
+.task input[type="checkbox"] {
+  appearance: none;
+  width: 38px;
+  height: 38px;
+  border: 5px solid #C0FF42;
+  border-radius: 10px;
+  position: relative;
+  cursor: pointer;
+}
+
+.task input[type="checkbox"]:checked::before {
+  content: "✕";
+  color: black;
+  font-size: 38px;
+  position: absolute;
+  top: -15px;
+  left: 0px;
+  font-family: 'Arial', sans-serif;
+  font-weight: 900;
+}
+
+.task input[type="checkbox"]:checked + span {
+  color: gray;
+  text-decoration: line-through;
+  font-size: 24px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+}
+
+.task-in-Progress {
+  font-size: 32px;
+  font-weight: 900;
+  font-family: 'Inter', sans-serif;
+  padding-left: 30px;
+  position: relative;
+}
+
+.task-in-Progress h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 5px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  
+}
+
+.task-in-Progress:first-of-type h2::after {
+  content: "Налаштування дати та часу";
+  position: absolute;
+  left: 100%;
+  white-space: nowrap;
+  font-size: 19px;
+  color: gray;
+  margin-left: 20px;
+  top: 4px;
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+  justify-content: center;
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+  padding: 5px 10px;
+  border-radius: 8px;
+  position: relative;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.page {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  
+}
+
+.task-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.task-header {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 6px;
+  margin-left: 550px;
+}
+
+.task-header img {
+  width: 50px;
+  height: 50px;
+  transform: translateY(-2px);
+}
+
+.settings-btn {
+  position: absolute;
+  top: 30px;
+  left: 50px;
+  color: #6c6c6c;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1;
+  width: 150px;
+}
+
+.task-box {
+  border-radius: 35px;
+  width: 1612px;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  border: 5px solid #C0FF42;
+  height: auto;
+  padding-bottom: 100px;
+}
+
+.task input[type="checkbox"] {
+  appearance: none;
+  width: 38px;
+  height: 38px;
+  border: 5px solid #C0FF42;
+  border-radius: 10px;
+  position: relative;
+  cursor: pointer;
+}
+
+.task input[type="checkbox"]:checked::before {
+  content: "✕";
+  color: black;
+  font-size: 38px;
+  position: absolute;
+  top: -15px;
+  left: 0px;
+  font-family: 'Arial', sans-serif;
+  font-weight: 900;
+}
+
+.task input[type="checkbox"]:checked + span {
+  color: gray;
+  text-decoration: line-through;
+  font-size: 24px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  
+}
+
+.task-Add {
+  font-size: 32px;
+  font-weight: 900;
+  font-family: 'Inter', sans-serif;
+  padding-left: 30px;
+  position: relative;
+}
+
+.task-Add h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 5px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  
+}
+
+
+.task-Add:first-of-type h2::after {
+  content: "Налаштування дати та часу";
+  position: absolute;
+  left: 100%;
+  white-space: nowrap;
+  font-size: 19px;
+  color: gray;
+  margin-left: 20px;
+  top: 4px;
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+  justify-content: center;
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+  padding: 5px 10px;
+  border-radius: 8px;
+  position: relative;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+  color: gray;
+}
+
+.page {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  
+}
+
+.task-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.task-header {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 6px;
+  margin-left: 550px;
+}
+
+.task-header img {
+  width: 50px;
+  height: 50px;
+  transform: translateY(-2px);
+}
+
+.settings-btn {
+  position: absolute;
+  top: 30px;
+  left: 50px;
+  color: #6c6c6c;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1;
+  width: 150px;
+}
+
+.task-box {
+  border-radius: 35px;
+  width: 1612px;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  border: 5px solid #C0FF42;
+  height: auto;
+  padding-bottom: 100px;
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 5px solid #C0FF42;
+  font-weight: 900;
+  font-size: 24px;
+}
+
+.task input[type="checkbox"] {
+  appearance: none;
+  width: 38px;
+  height: 38px;
+  border: 5px solid #C0FF42;
+  border-radius: 10px;
+  position: relative;
+  cursor: pointer;
+}
