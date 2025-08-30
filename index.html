@@ -1,36 +1,72 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
+<link href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+
   <meta charset="UTF-8">
     <title>TaskFlow</title>
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-  <header class-"site-header">
-    <div class="container">
-    <div id="site-nav" class="nav-wrap">
-  <h1>TaskFlow</h1>
-  <h4>your task-your flow</h4>
-  <a href="#done">Виконані</a>
-  <a href="#inProgress">У процесі</a>
-  <a href="#addTask">Додати завдання</a>
-  <form class="search-form" role="search">
-  <input type="search" placeholder="Пошук в завданнях...">
-  </form>
-    </div>
-    </div>
-  </header>
-  <main class="page">
-    <section class="tasks-today">
-      <h2>Завдання на сьогодні</h2>
+ <header class="site-header">
+  <div class="logo-block">
+  <div class="logo"></div>
+  <div class="logo-text">
+    <h1>TaskFlow</h1>
+    <h4>your task - your flow</h4>
+  </div>
+</div>
 
+  <nav class="nav-menu">
+    <a href="#done">Виконані</a>
+    <a href="#inProgress">У процесі</a>
+    <a href="#addTask">Додати завдання</a>
+  </nav>
+
+  <form class="search-form" role="search">
+    <input type="search" placeholder="Пошук в завданнях..." />
+  </form>
+</header>
+<main class="page">
+
+  <div class="task-group">
+    <div class="task-header">
+      <img src="https://i.postimg.cc/W4DtqBdD/Green-Arrow.png" alt="arrow" />
+      <h2>Завдання на сьогодні</h2>
+    </div>
+    <div class="settings-btn">Налаштування<br>дати та часу</div>
+    <div class="task-box">
       <div class="task">
-        <label>
-          <input type="checkbox"/>
-          Передзвонити співробітнику (коли буде час)
-        </label>
+        <input type="checkbox" id="task1" />
+        <span>Передзвонити співробітнику (коли буде час)</span>
       </div>
-  </main>
+      <div class="task">
+        <input type="checkbox" id="task2" />
+        <span>Зробити шаблон для проекту</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="task-group">
+    <div class="task-header">
+      <img src="https://i.postimg.cc/W4DtqBdD/Green-Arrow.png" alt="arrow" />
+      <h2>Всі завдання</h2>
+    </div>
+    <div class="task-box">
+      <div class="task">
+        <input type="checkbox" id="task3" />
+        <span>Передзвонити співробітнику (коли буде час)</span>
+      </div>
+      <div class="task">
+        <input type="checkbox" id="task4" />
+        <span>Зробити шаблон для проекту</span>
+      </div>
+    </div>
+  </div>
+
+</main>
   <script src="script.js"></script>
 </body>
 </html>
